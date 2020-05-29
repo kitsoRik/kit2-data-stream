@@ -1,0 +1,22 @@
+{
+  "name": "@kit2/data-stream",
+  "version": "1.0.15",
+  "description": "For write and read any data in bytes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --watch"
+  },
+  "author": "Pidburachynskyi Rostyslav",
+  "license": "ISC",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/buffer.js",
+    "src/stream.js",
+    "src/datastream.js"
+  ],
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0"
+  }
+}
