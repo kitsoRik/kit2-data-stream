@@ -18,5 +18,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.2.0"
+  },
+  "homepage": "https://github.com/kitsoRik/kit2-data-stream",
+  "bugs": {
+    "url": "https://github.com/kitsoRik/kit2-data-stream/issues"
   }
 }
