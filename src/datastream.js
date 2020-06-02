@@ -20,7 +20,9 @@ class DataStream {
 	writeUint16(value) {
 		return this._stream.writeUint16(value);
 	}
-	writeInt16 = (value) => this.writeUint16(value + 0b0111111111111111);
+	writeInt16(value) {
+		return this.writeUint16(value + 0b0111111111111111);
+	}
 	// writeUint32(value) { return this._stream.writeUint32(value); }
 	//writeInt32 = (value) => this.writeUint32(value + 0b01111111111111111111111111111111);
 

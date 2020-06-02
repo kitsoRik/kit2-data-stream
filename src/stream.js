@@ -2,7 +2,7 @@ const Buffer = require("./buffer");
 
 class Stream {
 	constructor(buffer) {
-		this._buffer = buffer instanceof Buffer ? buffer : new Buffer();
+        this._buffer = buffer instanceof Buffer ? buffer : new Buffer();
 	}
 
 	get buffer() {

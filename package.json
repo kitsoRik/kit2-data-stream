@@ -1,6 +1,6 @@
 {
 	"name": "@kit2/data-stream",
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"description": "For write and read any data in bytes",
 	"main": "index.js",
 	"scripts": {
