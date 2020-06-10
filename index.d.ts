@@ -1,5 +1,5 @@
 export class Buffer {
-    constructor() { }
+    constructor();
 
     static fromUint8Array(array: Uint8Array): Buffer;
 
@@ -10,8 +10,9 @@ export class Buffer {
 }
 
 export class DataStream {
+    private _stream: any;
 
-    constructor(buffer?: Buffer) { };
+    constructor(buffer?: Buffer);
 
     get buffer(): Buffer;
 
@@ -42,12 +43,4 @@ export class DataStream {
     readBoolean(): boolean;
     readFunction(): any;
     readObject(): object;
-
-    constructor(buffer) {
-        this._stream = new Stream(buffer);
-
-        this._readIndex = 0;
-    }
-
-    get buffer() { return this._stream.buffer };
 }

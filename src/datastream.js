@@ -23,8 +23,12 @@ class DataStream {
 	writeInt16(value) {
 		return this.writeUint16(value + 0b0111111111111111);
 	}
-	// writeUint32(value) { return this._stream.writeUint32(value); }
-	//writeInt32 = (value) => this.writeUint32(value + 0b01111111111111111111111111111111);
+	writeUint32(value) {
+		return this.writeInt32(value - 0b01111111111111111111111111111111);
+	}
+	writeInt32(value) {
+		return this._stream.writeUint32(value);
+	}
 
 	writeUint64AsString(value) {
 		return this.writeString(value.toString());
@@ -101,8 +105,12 @@ class DataStream {
 	readInt16() {
 		return this.readUint16() - 0b0111111111111111;
 	}
-	// readUint32() { return this._readAny(this._stream.readUint32);
-	// readInt32() { return this.readUint32() - 0b01111111111111111111111111111111;
+	readUint32() {
+		return this.readInt32() + 0b01111111111111111111111111111111;
+	}
+	readInt32() {
+		return this._readAny(this._stream.readUint32);
+	}
 
 	readUint64AsString() {
 		return parseFloat(this.readString());
@@ -169,8 +177,8 @@ class DataStream {
 	}
 
 	readUint8Array() {
-		const result = this._stream.readUint8Array(this._readIndex);
-		this._readIndex += result.length + 2;
+		const [result, size] = this._stream.readUint8Array(this._readIndex);
+		this._readIndex += size;
 		return result;
 	}
 
